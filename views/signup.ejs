@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            width: 100%;
+        }
+        div {    
+        background-color: bisque;
+        background-size: cover;
+        padding: 5px;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    form {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        font-size: 15px;
+        height: 80%;
+        width: 80%;
+        padding: 30px;
+    }
+    input {
+        width: 500px;
+        border-radius: 45px;
+        background-color: white;
+        height: 30px;
+        border: 1px solid;
+        padding-left: 5px;
+    }
+    fieldset select{
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        width: 400px;
+    }
+    a {
+        text-decoration: none;
+        
+    }
+    br {
+        padding: 7px;
+    }
+    label{
+        margin-top: 4px;
+        align-items: center;
+    }
+    button {
+        margin-top: 4px;
+        padding: 2px;
+        height: 40px;
+        width: 20%;
+        border: none;
+        border-radius: 5px;
+        background-color: orange;
+    }
+    .error {
+        color: red;
+    }
+    </style>
+    <%- include('./components/navbar.ejs')%> 
+    <div>  
+    <form id="signup-form" method="post" action="/auth/signup">
+
+        <p class="error"><%=error%></p>
+
+        <label for="name"> What is your name </label>
+        <input type="text" name="name" placeholder="Surname first" id="name">
+        <br>        
+        <label for="address">Address</label>
+        <input type="text" name="address" placeholder="Address" id="address">
+        <br>
+        <label for="email">Email address</label>
+        <input type="email" name="email" id="email" placeholder="enter e-mail address">
+        <br>
+        <label for="Date">Date of birth</label>
+        <input type="Date" name="date_of_birth" id="date">
+        <br>
+        <label for="Gender">what is your Gender</label>
+        <fieldset>
+            <select name="" id="gender">
+                <option for="Male">Male</option>
+                <option for="Male">Female</option>
+            </select>
+        </fieldset>
+        <br>
+        <label for="username">Username</label>
+        <input type="username" name="username" id="username" placeholder="enter username">
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="enter password">
+        <br>
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="re-enter password">
+        <br>
+        
+        <button type="submit"  id="registerBtn">Sign Up</button>
+        
+        <p>Already have an account? <a href="/login.ejs">Log In</a></p>
+    </form>
+</div>
+    <%- include('./components/footer.ejs')%>
+</body>
+</html>

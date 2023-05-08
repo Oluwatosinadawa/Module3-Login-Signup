@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In Form</title>
+</head>
+<style>
+    .main {
+        height: 90vh;
+        width: 100%;
+        background-color: bisque;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    input[type=text], input[type=password] {
+        padding: 10px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+    }
+
+    button[type=submit] {
+        padding: 10px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: orange;
+        color: white;
+        font-size: 18px;
+    }
+    .error {
+        color: red;
+    }
+
+</style>
+<body>
+    <%- include('./components/navbar.ejs')%>
+    <div class="main">
+    
+        <form id="login-form" method="post" action="/auth/login">
+            <p class="error"><%=error%></p>
+            <label for="email">Email:</label>
+            <input type="text" id="username" name="email" >
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" >
+            <br>
+            <button type="submit">Log In</button>
+          </form>
+    </div>
+    <%- include('./components/footer.ejs')%>
+</body>
+</html>
